@@ -1,0 +1,5 @@
+{
+  "browser": "local",
+  "headless_mode": true,
+  "timeout": 15
+}
