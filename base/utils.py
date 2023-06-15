@@ -1,7 +1,7 @@
 import os
 
 # --- ENV URL ---
-HOST = os.getenv('BASE_URL', "https://www.facebook.com")
+HOST = os.getenv('BASE_URL', "https://www.demoblaze.com/index.html")
 
 # --- SELENIUM HUB ---
 SELENIUM_HUB_HOST = 'selenium-hub'
