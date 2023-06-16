@@ -12,7 +12,7 @@ venv:
 install-dependencies: venv
 	. venv/bin/activate && pip install -r requirements.txt
 
-test:
+test: install-dependencies
 	# Remove previous test reports
 	rm -rf reports/*
   # Activate virtual environment and run tests using pytest
