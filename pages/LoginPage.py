@@ -12,7 +12,6 @@ class LoginPage(Base):
     _LOGIN_INPUT = (By.CSS_SELECTOR, "#to_do")
     _PASSWORD_INPUT = (By.CSS_SELECTOR, "#to_do")
 
-
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -27,6 +26,3 @@ class LoginPage(Base):
 
     def click_login_button(self):
         self.click(self._LOGIN_BUTTON)
-
-    def login(self, username, password):
-        # TODO
