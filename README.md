@@ -3,7 +3,7 @@
 ## Test projects - [DemoBlaze](https://www.demoblaze.com/index.html)
 
 ### Test scenarios:
-1. Test login
+1. ~Test login~
 2. Test sign-up
 3. Test product page (user/incognito)
 4. Test add to cart (user/incognito)
