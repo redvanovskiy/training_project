@@ -1,4 +1,4 @@
-from pages.Sign_upPage import Sign_upPage
+from pages.Sign_upPage import SignUpPage
 
 
 class BaseClass:
@@ -8,7 +8,7 @@ class BaseClass:
 
     @classmethod
     def setup_class(cls):
-        cls.page = Sign_upPage(cls.driver)
+        cls.page = SignUpPage(cls.driver)
         cls.page.open()
 
 class TestSign_up(BaseClass):
