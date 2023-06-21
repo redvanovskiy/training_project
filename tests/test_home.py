@@ -30,7 +30,7 @@ class TestHome(BaseClass):
         self.page.visible(self.page._PRODUCTS)
 
     def test_pagination_is_presented(self):
-        self.page.visible(self.page._PAGINATION)
+        self.page.visible(self.page._PAGINATION_PREV)
 
     def test_footer_is_presented(self):
         self.page.visible(self.page._FOOTER)

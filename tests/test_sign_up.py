@@ -55,6 +55,6 @@ class TestSign_up(BaseClass):
         self.page._sign_up('toster', '12345qwerty')
         self.page.assert_text_in_alert(self.successful_msg)
 
-    # def test_successful_random_sign_up(self):
-    #     self.page._sign_up(self.page.set_random_username, self.page.set_random_password)
-    #     self.page.assert_text_in_alert(self.successful_msg)
+    def test_successful_random_sign_up(self):
+        self.page._sign_up(self.page.set_random_username, self.page.set_random_password)
+        self.page.assert_text_in_alert(self.successful_msg)

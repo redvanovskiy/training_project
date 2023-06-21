@@ -45,13 +45,13 @@ class Sign_upPage(Base):
         self.set_password(password)
         self.click_submit_sign_up_button()
 
-    # def _sign_up_with_random(self, random_username, random_password):
-    #     random_username = self.set_random_username()
-    #     random_password = self.set_random_password()
-    #     self.click_sign_up_button()
-    #     self.set_username(random_username)
-    #     self.set_password(random_password)
-    #     self.click_submit_sign_up_button()
+    def _sign_up_with_random(self, random_username, random_password):
+        random_username = self.set_random_username()
+        random_password = self.set_random_password()
+        self.click_sign_up_button()
+        self.set_username(random_username)
+        self.set_password(random_password)
+        self.click_submit_sign_up_button()
 
     def assert_text_in_alert(self, expected_text):
         time.sleep(2)

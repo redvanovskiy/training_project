@@ -9,7 +9,7 @@ class AboutUsPage(Base):
     _PLAY_VIDEO_BUTTON = (By.CSS_SELECTOR, ".vjs-big-play-button")
     _VIDEO = (By.CSS_SELECTOR, "#example-video_html5_api")
     _CLOSE_BUTTON = (By.CSS_SELECTOR, "#videoModal .btn.btn-secondary")
-    _DESCRIPTION = (By.CSS_SELECTOR, "#fotcont .caption p")
+    _DESCRIPTION = (By.CSS_SELECTOR, "#fotcont .caption p:nth-of-type(1)")
 
     def __init__(self, driver):
         super().__init__(driver)

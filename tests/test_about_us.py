@@ -14,6 +14,10 @@ class BaseClass:
 
 class CheckAboutUs(BaseClass):
 
+    def setup_method(self):
+        # Refresh page before new test
+        self.page.refresh()
+
     def test_about_us(self):
         self.page._about_us()
 
