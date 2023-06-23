@@ -18,7 +18,7 @@ class TestPagination(BaseClass):
         # Refresh page before new test
         self.page.refresh()
 
-    def pagination_test(self):
+    def test_pagination(self):
         self.page.visible(self.page._PAGINATION_PREV)
         self.page.clickable(self.page._PAGINATION_PREV)
         self.page.visible(self.page._PAGINATION_NEXT)

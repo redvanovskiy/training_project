@@ -1,4 +1,4 @@
-from pages.Sign_upPage import SignUpPage
+from pages.SignUpPage import SignUpPage
 
 
 class BaseClass:
@@ -11,7 +11,8 @@ class BaseClass:
         cls.page = SignUpPage(cls.driver)
         cls.page.open()
 
-class TestSign_up(BaseClass):
+
+class TestSignUp(BaseClass):
 
     fail_msg = 'Please fill out Username and Password.'
     another_fail_msg = 'This user already exist.'

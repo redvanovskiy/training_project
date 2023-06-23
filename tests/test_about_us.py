@@ -12,7 +12,7 @@ class BaseClass:
         cls.page.open()
 
 
-class CheckAboutUs(BaseClass):
+class TestAboutUs(BaseClass):
 
     def setup_method(self):
         # Refresh page before new test
@@ -21,5 +21,5 @@ class CheckAboutUs(BaseClass):
     def test_about_us(self):
         self.page._about_us()
 
-    def read_description(self):
+    def test_read_description(self):
         self.page.visible(self.page._DESCRIPTION)

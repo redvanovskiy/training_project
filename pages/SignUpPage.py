@@ -7,7 +7,7 @@ from base.base import Base
 from selenium.webdriver.common.by import By
 
 
-class Sign_upPage(Base):
+class SignUpPage(Base):
     _SIGN_UP_BUTTON = (By.CSS_SELECTOR, "#signin2")
     _USERNAME_INPUT = (By.CSS_SELECTOR, "#sign-username")
     _PASSWORD_INPUT = (By.CSS_SELECTOR, "#sign-password")

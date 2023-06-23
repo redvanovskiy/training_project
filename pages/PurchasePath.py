@@ -12,7 +12,6 @@ class PurchasePath(Base):
     _NAME_OF_USER = (By.CSS_SELECTOR, "#nameofuser")
     _PRODUCT_1 = (By.PARTIAL_LINK_TEXT, "Samsung galaxy s6")
     _PRODUCT_2 = (By.PARTIAL_LINK_TEXT, "Nexus 6")
-    # tbodyid .col-lg-4.col-md-6.mb-4:first-child .card-title
     _ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, ".btn.btn-success.btn-lg")
     success_msg = 'Product added'
     _CART_BUTTON = (By.CSS_SELECTOR, "#cartur")
@@ -28,7 +27,7 @@ class PurchasePath(Base):
     _CLOSE_BUTTON = (By.CSS_SELECTOR, "#orderModal .modal-footer .btn.btn-secondary")
     _PURCHASE_BUTTON = (By.CSS_SELECTOR, "#orderModal .modal-footer .btn.btn-primary")
     _THANK_MESSAGE = (By.CSS_SELECTOR, ".sweet-alert.showSweetAlert.visible :nth-child(6)")
-    _CONFIRM_BUTTON = (By.CSS_SELECTOR, ".sweet-alert.showSweetAlert.visible .confirm.btn.btn-lg.btn-primary")
+    _CONFIRM_BUTTON = (By.CSS_SELECTOR, ".showSweetAlert .confirm")
 
     def __init__(self, driver):
         super().__init__(driver)

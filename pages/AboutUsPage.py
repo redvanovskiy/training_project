@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 
 class AboutUsPage(Base):
-    _ABOUT_US_BUTTON = (By.CSS_SELECTOR, "#videoModal")
+    _ABOUT_US_BUTTON = (By.CSS_SELECTOR, "#navbarExample li:nth-of-type(3)")
     _PLAY_VIDEO_BUTTON = (By.CSS_SELECTOR, ".vjs-big-play-button")
     _VIDEO = (By.CSS_SELECTOR, "#example-video_html5_api")
     _CLOSE_BUTTON = (By.CSS_SELECTOR, "#videoModal .btn.btn-secondary")
@@ -21,7 +21,7 @@ class AboutUsPage(Base):
         self.click(self._PLAY_VIDEO_BUTTON)
 
     def click_close_button(self):
-        self.click(self._ABOUT_US_BUTTON)
+        self.click(self._CLOSE_BUTTON)
 
     def _about_us(self):
         self.click_about_us_button()
