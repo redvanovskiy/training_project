@@ -14,7 +14,6 @@ class PurchasePath(Base):
     _PRODUCT_1 = (By.PARTIAL_LINK_TEXT, "Samsung galaxy s6")
     _PRODUCT_2 = (By.PARTIAL_LINK_TEXT, "Nexus 6")
     _ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, ".btn.btn-success.btn-lg")
-    success_msg = 'Product added'
     _CART_BUTTON = (By.CSS_SELECTOR, "#cartur")
     _HOME_BUTTON = (By.CSS_SELECTOR, ".nav-item.active .nav-link")
     _DELETE_BUTTON = (By.CSS_SELECTOR, "#tbodyid .success:nth-of-type(1) :nth-of-type(4) a")
@@ -105,16 +104,16 @@ class PurchasePath(Base):
     def click_ok_button(self):
         self.click(self._CONFIRM_BUTTON)
 
-    def choice_of_goods(self):
+    def choice_of_goods(self, text):
         self.click(self._PRODUCT_1)
         self.click_add_to_cart_button()
-        self.assert_text_in_alert(self.success_msg)
+        self.assert_text_in_alert(text)
         self.accept_alert()
         self.back_to_home_page()
         time.sleep(2)
         self.click(self._PRODUCT_2)
         self.click_add_to_cart_button()
-        self.assert_text_in_alert(self.success_msg)
+        self.assert_text_in_alert(text)
         self.accept_alert()
         self.open_cart()
         time.sleep(2)
