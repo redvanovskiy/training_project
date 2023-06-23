@@ -2,6 +2,7 @@ from pages.PurchasePath import PurchasePath
 
 
 class BaseClass:
+    
     driver = None
     page = None
 
