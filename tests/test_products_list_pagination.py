@@ -24,7 +24,7 @@ class TestPagination(BaseClass):
         self.page.visible(self.page._PAGINATION_NEXT)
         self.page.clickable(self.page._PAGINATION_NEXT)
 
-    def test_pagination_changes(self):  # TODO
+    def test_pagination_changes(self):
         self.page.visible(self.page._PAGINATION_NEXT)
         self.page.click(self.page._PAGINATION_NEXT)
         self.page.visible(self.page._PRODUCT2)
