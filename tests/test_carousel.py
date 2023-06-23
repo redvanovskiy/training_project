@@ -2,6 +2,7 @@ from pages.HomePage import HomePage
 
 
 class BaseClass:
+    
     driver = None
     page = None
 
