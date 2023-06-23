@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 
 
 class HomePage(Base):
+
     _NAVBAR = (By.CSS_SELECTOR, "#navbarExample")
     _ABOUT_US = (By.CSS_SELECTOR,"#videoModal")
     _CAROUSEL = (By.CSS_SELECTOR, "#carouselExampleIndicators")

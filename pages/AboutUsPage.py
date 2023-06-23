@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 
 
 class AboutUsPage(Base):
+
     _ABOUT_US_BUTTON = (By.CSS_SELECTOR, "#navbarExample li:nth-of-type(3)")
     _PLAY_VIDEO_BUTTON = (By.CSS_SELECTOR, ".vjs-big-play-button")
     _VIDEO = (By.CSS_SELECTOR, "#example-video_html5_api")

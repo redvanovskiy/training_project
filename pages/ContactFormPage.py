@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 
 
 class ContactFormPage(Base):
+
     _CONTACT_BUTTON = (By.CSS_SELECTOR, "#exampleModal")
     _EMAIL_INPUT = (By.CSS_SELECTOR, "#recipient-email")
     _NAME_INPUT = (By.CSS_SELECTOR, "#recipient-name")
