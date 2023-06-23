@@ -25,8 +25,10 @@ class PurchasePath(Base):
     _CREDIT_CARD = (By.CSS_SELECTOR, "#card")
     _MONTH = (By.CSS_SELECTOR, "#month")
     _YEAR = (By.CSS_SELECTOR, "#year")
-    _CLOSE_BUTTON = (By.CSS_SELECTOR, ".modal-content .modal-footer .btn.btn-secondary")
-    _PURCHASE_BUTTON = (By.CSS_SELECTOR, ".modal-content .modal-footer .btn.btn-primary")
+    _CLOSE_BUTTON = (By.CSS_SELECTOR, "#orderModal .modal-footer .btn.btn-secondary")
+    _PURCHASE_BUTTON = (By.CSS_SELECTOR, "#orderModal .modal-footer .btn.btn-primary")
+    _THANK_MESSAGE = (By.CSS_SELECTOR, ".sweet-alert.showSweetAlert.visible :nth-child(6)")
+    _CONFIRM_BUTTON = (By.CSS_SELECTOR, ".sweet-alert.showSweetAlert.visible .confirm.btn.btn-lg.btn-primary")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -100,6 +102,9 @@ class PurchasePath(Base):
     def click_purchase_button(self):
         self.click(self._PURCHASE_BUTTON)
 
+    def click_ok_button(self):
+        self.click(self._CONFIRM_BUTTON)
+
     def choice_of_goods(self):
         self.click(self._PRODUCT_1)
         self.click_add_to_cart_button()
@@ -124,4 +129,8 @@ class PurchasePath(Base):
         self.set_credit_card(credit_card)
         self.set_month(month)
         self.set_year(year)
+
+    def confirm_payment_and_check_receipt(self):
         self.click_purchase_button()
+        self.visible(self._THANK_MESSAGE)
+        self.click_ok_button()

@@ -1,7 +1,6 @@
 from pages.PurchasePath import PurchasePath
 
 
-
 class BaseClass:
     driver = None
     page = None
@@ -14,7 +13,7 @@ class BaseClass:
 
 class TestPurchasePathIncognito(BaseClass):
 
-    fail_msg = 'Please fill out all fields.'
+    fail_msg = 'Please fill out Name and Creditcard.'
     success_msg = 'Product added'
     purchase_msg = 'Thank you for your purchase!'
 
@@ -25,14 +24,16 @@ class TestPurchasePathIncognito(BaseClass):
     def test_purchase_path_with_empty_set_credential(self):
         self.page.choice_of_goods()
         self.page.set_credential('', '', '', '', '', '')
+        self.page.click_purchase_button()
         self.page.assert_text_in_alert(self.fail_msg)
         self.page.accept_alert()
+        self.page.click_close_button()
+        self.page.back_to_home_page()
 
     def test_purchase_path(self):
         self.page.choice_of_goods()
         self.page.set_credential('Toster', 'Ukraine', 'Kyiv', 123245456432113456, 6, 2023)
-        self.page.assert_text_in_alert(self.purchase_msg)
-        self.page.accept_alert()
+        self.page.confirm_payment_and_check_receipt()
 
 
 class TestPurchasePathAsUser(BaseClass):
@@ -50,22 +51,14 @@ class TestPurchasePathAsUser(BaseClass):
     def test_purchase_path_with_empty_set_credential(self):
         self.page.choice_of_goods()
         self.page.set_credential('', '', '', '', '', '')
+        self.page.click_purchase_button()
         self.page.assert_text_in_alert(self.fail_msg)
         self.page.accept_alert()
+        self.page.click_close_button()
+        self.page.back_to_home_page()
 
     def test_purchase_path(self):
         self.page.choice_of_goods()
         self.page.set_credential('Toster', 'Ukraine', 'Kyiv', 123245456432113456, 6, 2023)
-        self.page.assert_text_in_alert(self.purchase_msg)
-        self.page.accept_alert()
-
-
-
-
-
-
-
-
-
-
+        self.page.confirm_payment_and_check_receipt()
 
