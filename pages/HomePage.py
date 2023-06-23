@@ -15,6 +15,8 @@ class HomePage(Base):
     _2CATEGORIES_NAME = (By.CSS_SELECTOR, ".list-group .list-group-item:nth-of-type(2)")
     _3CATEGORIES_NAME = (By.CSS_SELECTOR, ".list-group .list-group-item:nth-of-type(3)")
     _PRODUCTS = (By.CSS_SELECTOR, "#contcont #tbodyid")
+    _PRODUCT1 = (By.PARTIAL_LINK_TEXT, "Samsung galaxy s6")
+    _PRODUCT2 = (By.PARTIAL_LINK_TEXT, "ASUS Full HD")
     _PAGINATION_PREV = (By.CSS_SELECTOR, "#prev2")
     _PAGINATION_NEXT = (By.CSS_SELECTOR, "#frm #next2")
     _FOOTER = (By.CSS_SELECTOR, "#footc #fotcont")

@@ -27,6 +27,6 @@ class TestPagination(BaseClass):
     def test_pagination_changes(self):
         self.page.visible(self.page._PAGINATION_NEXT)
         self.page.click(self.page._PAGINATION_NEXT)
-        self.page.not_visible(self.page._PAGINATION_NEXT)
+        self.page.visible(self.page._PRODUCT2)
         self.page.click(self.page._PAGINATION_PREV)
-        self.page.visible(self.page._PAGINATION_NEXT)
+        self.page.visible(self.page._PRODUCT1)
