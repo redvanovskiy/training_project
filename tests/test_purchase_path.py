@@ -15,8 +15,8 @@ class BaseClass:
 class TestPurchasePathIncognito(BaseClass):
 
     fail_msg = 'Please fill out Name and Creditcard.'
-    success_msg = 'Product added'
-    purchase_msg = 'Thank you for your purchase!'
+    success_msg = 'Product added'  # .
+    purchase_msg = 'Thank you for your purchase!'  # not used
 
     def setup_method(self):
         # Refresh page before new test
@@ -40,14 +40,14 @@ class TestPurchasePathIncognito(BaseClass):
 class TestPurchasePathAsUser(BaseClass):
 
     fail_msg = 'Please fill out Name and Creditcard.'
-    success_msg = 'Product added.'
-    purchase_msg = 'Thank you for your purchase!'
+    success_msg = 'Product added.'  # .
+    purchase_msg = 'Thank you for your purchase!'  # not used
 
     def setup_method(self):
         # Refresh page before new test
         self.page.refresh()
 
-    def test_purchase_path_with_empty_set_credential(self):
+    def test_purchase_path_with_empty_set_credential(self):  # move login from setup_method to first test
         self.page.login('sm_john_doe', '1234567890')
         self.page.visible(self.page._NAME_OF_USER)
         self.page.choice_of_goods(self.success_msg)
