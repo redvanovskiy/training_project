@@ -5,8 +5,8 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage(Base):
+
     _LOGIN_BUTTON = (By.CSS_SELECTOR, "#login2")
-    _SIGNUP_BUTTON = (By.CSS_SELECTOR, "#signin2")
     _LOGIN_INPUT = (By.CSS_SELECTOR, "#loginusername")
     _PASSWORD_INPUT = (By.CSS_SELECTOR, "#loginpassword")
     _SUBMIT_LOGIN_BUTTON = (By.CSS_SELECTOR, "#logInModal .btn.btn-primary")
