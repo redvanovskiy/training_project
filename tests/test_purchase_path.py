@@ -49,7 +49,7 @@ class TestPurchasePathAsUser(BaseClass):
         self.page.login('sm_john_doe', '1234567890')
         self.page.visible(self.page._NAME_OF_USER)
 
-    def test_purchase_path_with_empty_set_credential(self):
+    def test_purchase_path_with_empty_set_credential(self):  # TODO
         self.page.choice_of_goods()
         self.page.set_credential('', '', '', '', '', '')
         self.page.click_purchase_button()
