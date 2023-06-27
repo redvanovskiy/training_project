@@ -23,14 +23,6 @@ class SignupPage(Base):
     def set_password(self, password):
         self.send_keys(self._PASSWORD_INPUT, password)
 
-    def click_submit_login_button(self):
+    def click_submit_signup_button(self):
         self.click(self._SUBMIT_SIGNUP_BUTTON)
 
-    def assert_text_in_alert(self, expected_text):
-        time.sleep(2)
-        alert = self.driver.switch_to.alert
-        assert str(alert.text) == str(expected_text)
-
-    def accept_alert(self):
-        alert = self.driver.switch_to.alert
-        alert.accept()
