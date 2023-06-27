@@ -1,5 +1,7 @@
 from pages.SignupPage import SignupPage
 from pages.LoginPage import LoginPage
+import random
+import string
 
 
 class BaseClass:
@@ -7,6 +9,7 @@ class BaseClass:
     driver = None
     page = None
     login = None
+
 
     @classmethod
     def setup_class(cls):
@@ -19,12 +22,21 @@ class BaseClass:
 class TestSignup(BaseClass):
 
     fail_msg = 'Please fill out Username and Password.'
-    doesnt_exist_msg = 'User does not exist.'
-    wrong_pass_msg = 'Wrong password.'
+    user_exist = 'This user already exist.'
+    sign_up_ok = 'Sign up successful.'
+    user_name = ''.join(random.choice(string.ascii_letters) for i in range(10))
 
     def setup_method(self):
         # Refresh page before new test
         self.page.refresh()
+
+    def test_successful_signup(self):
+        self.page.click_signup_button()
+        self.page.set_username(self.user_name)
+        self.page.set_password('1')
+        self.page.click_submit_signup_button()
+        self.login.assert_text_in_alert(self.sign_up_ok)
+        self.login.accept_alert()
 
     # def test_failed_login_with_empty_credentials(self):
     #     self.page._login('', '')
@@ -51,9 +63,7 @@ class TestSignup(BaseClass):
     #     self.page.assert_text_in_alert(self.wrong_pass_msg)
     #     self.page.accept_alert()
     #
-    # def test_successful_login(self):
-    #     self.page._login('sm_john_doe', '1234567890')
-    #     self.page.visible(self.page._LOGOUT_BUTTON)
+
     #
     # def test_successful_logout(self):
     #     # Clear cookies for logout
