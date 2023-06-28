@@ -16,8 +16,6 @@ class BaseClass:
         cls.page = SignupPage(cls.driver)
         cls.login = LoginPage(cls.driver)
         cls.page.open()
-        cls.login.open()
-
 
 class TestSignup(BaseClass):
 
