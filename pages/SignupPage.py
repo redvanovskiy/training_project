@@ -26,3 +26,9 @@ class SignupPage(Base):
     def click_submit_signup_button(self):
         self.click(self._SUBMIT_SIGNUP_BUTTON)
 
+    def _signup(self, username, password):
+        self.click_signup_button()
+        self.set_username(username)
+        self.set_password(password)
+        self.click_submit_signup_button()
+
