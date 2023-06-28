@@ -9,6 +9,10 @@ class HomePage(Base):
     _PRODUCTS = (By.CSS_SELECTOR, "#contcont #tbodyid")
     _PAGINATION = (By.CSS_SELECTOR, "#prev2")
     _FOOTER = (By.CSS_SELECTOR, "#footc #fotcont")
+    _PRODUCT_PAGE = (By.CSS_SELECTOR,"#tbodyid > div:nth-child(1) > div > a > img")
 
     def __init__(self, driver):
         super().__init__(driver)
+
+    def click_product_page(self):
+        self.click(self._PRODUCT_PAGE)

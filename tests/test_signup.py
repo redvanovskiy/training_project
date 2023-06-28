@@ -24,7 +24,7 @@ class TestSignup(BaseClass):
     fail_msg = 'Please fill out Username and Password.'
     user_exist = 'This user already exist.'
     sign_up_ok = 'Sign up successful.'
-    cred = ''.join(random.choice(string.ascii_letters) for i in range(10))
+    cred = ''.join(random.choice(string.hexdigits) for i in range(10))
 
     def setup_method(self):
         # Refresh page before new test
@@ -60,12 +60,12 @@ class TestSignup(BaseClass):
         self.page.driver.delete_all_cookies()
         self.page.refresh()
         # Run test
-        loc_cred = ''.join(random.choice(string.ascii_letters) for i in range(10))
+        loc_cred = ''.join(random.choice(string.hexdigits) for i in range(10))
         self.page._signup(loc_cred, loc_cred)
         self.login.assert_text_in_alert(self.sign_up_ok)
         self.login.accept_alert()
         self.page.refresh()
         self.login._login(loc_cred, loc_cred)
-        self.page.visible(self.login._LOGOUT_BUTTON)
+        self.login.visible(self.login._LOGOUT_BUTTON)
         self.login.click_logout_button()
-        self.page.visible(self.login._LOGIN_BUTTON)
+        self.login.visible(self.login._LOGIN_BUTTON)
