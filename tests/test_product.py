@@ -1,7 +1,7 @@
 from pages.HomePage import HomePage
 from pages.LoginPage import LoginPage
 from pages.ProductPage import ProductPage
-
+import time
 
 class BaseClass:
 
@@ -9,6 +9,9 @@ class BaseClass:
     page = None
     login = None
     home = None
+    product_name = 'Samsung galaxy s6'
+    product_price = '$360 *includes tax'
+    product_description = 'The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos 7420 processor and it comes with 3GB of RAM. The phone packs 32GB of internal storage cannot be expanded.'
 
 
     @classmethod
@@ -20,19 +23,40 @@ class BaseClass:
 
 class TestProduct(BaseClass):
 
-    product_name = 'Samsung galaxy s6'
-    product_price = '$360 *includes tax'
-
     def setup_method(self):
         # Home page open before new test
         self.page.open()
+        self.home.click_product_page()
 
     def test_assert_name(self):
-        self.home.click_product_page()
         self.page.assert_product_name(self.product_name)
         self.page.visible(self.page._ADD_TO_CART_BUTTON)
 
     def test_assert_price(self):
-        self.home.click_product_page()
         self.page.assert_product_price(self.product_price)
+        self.page.visible(self.page._ADD_TO_CART_BUTTON)
+
+    def test_assert_description(self):
+        self.page.assert_product_description(self.product_description)
+        self.page.visible(self.page._ADD_TO_CART_BUTTON)
+
+class TestProduct_user(BaseClass):
+
+    def setup_method(self):
+        # Home page open before new test
+        self.page.open()
+        self.login._login('1', '1')
+        time.sleep(1)
+        self.home.click_product_page()
+
+    def test_assert_name(self):
+        self.page.assert_product_name(self.product_name)
+        self.login.visible(self.login._LOGOUT_BUTTON)
+
+    def test_assert_price(self):
+        self.page.assert_product_price(self.product_price)
+        self.login.visible(self.login._LOGOUT_BUTTON)
+
+    def test_assert_description(self):
+        self.page.assert_product_description(self.product_description)
         self.page.visible(self.page._ADD_TO_CART_BUTTON)
