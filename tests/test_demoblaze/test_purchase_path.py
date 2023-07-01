@@ -1,4 +1,4 @@
-from pages.PurchasePath import PurchasePath
+from pages.pages__demoblaze.PurchasePath import PurchasePath
 
 
 class BaseClass:

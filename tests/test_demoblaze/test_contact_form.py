@@ -1,4 +1,4 @@
-from pages.ContactFormPage import ContactFormPage
+from pages.pages__demoblaze.ContactFormPage import ContactFormPage
 
 
 class BaseClass:

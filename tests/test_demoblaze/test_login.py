@@ -1,4 +1,4 @@
-from pages.LoginPage import LoginPage
+from pages.pages__demoblaze.LoginPage import LoginPage
 
 
 class BaseClass:

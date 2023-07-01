@@ -1,4 +1,4 @@
-from pages.HomePage import HomePage
+from pages.pages__demoblaze.HomePage import HomePage
 
 
 class BaseClass:

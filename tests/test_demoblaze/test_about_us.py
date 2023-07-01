@@ -1,4 +1,4 @@
-from pages.AboutUsPage import AboutUsPage
+from pages.pages__demoblaze.AboutUsPage import AboutUsPage
 
 
 class BaseClass:

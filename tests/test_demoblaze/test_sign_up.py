@@ -1,4 +1,4 @@
-from pages.SignUpPage import SignUpPage
+from pages.pages__demoblaze.SignUpPage import SignUpPage
 
 
 class BaseClass:
