@@ -1,6 +1,6 @@
 import time
 
-from pages.pages_orangehrm import PimPage
+from pages.pages_orangehrm.PimPage import PimPage
 
 
 class BaseClass:
@@ -23,6 +23,7 @@ class TestAddEmployee(BaseClass):
     def test_add_employee(self):
         self.page._login('Admin', 'admin123')
         self.page.open_pim_module()
+        self.page.click_add_button()
         self.page._set_credentials()
         time.sleep(2)
         self.page.check_new_profile()
@@ -37,6 +38,8 @@ class TestDeleteEmployee(BaseClass):
         self.page.refresh()
 
     def test_delete_employee(self):
+        self.page._login('Admin', 'admin123')
+        self.page.open_pim_module()
         self.page.sort_employee()
         self.page.click_delete_button()
         self.page.click_confirm_button()
