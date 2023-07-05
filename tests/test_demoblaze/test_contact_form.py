@@ -1,6 +1,6 @@
-from pages.HomePage import HomePage
-from pages.LoginPage import LoginPage
-from pages.ContactFormPage import ContactFormPage
+from pages.demoblaze.HomePage import HomePage
+from pages.demoblaze.LoginPage import LoginPage
+from pages.demoblaze.ContactFormPage import ContactFormPage
 # from selenium.webdriver import ActionChains
 
 class BaseClass:

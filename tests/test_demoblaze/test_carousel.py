@@ -1,4 +1,4 @@
-from pages.CarouselPage import CarouselPage
+from pages.demoblaze.CarouselPage import CarouselPage
 import time
 
 class BaseClass:

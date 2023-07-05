@@ -1,9 +1,9 @@
-from pages.HomePage import HomePage
-from pages.LoginPage import LoginPage
-from pages.AboutUsPage import AboutUsPage
-from pages.ContactFormPage import ContactFormPage
-from pages.ProductPage import ProductPage
-from pages.SignupPage import SignupPage
+from pages.demoblaze.HomePage import HomePage
+from pages.demoblaze.LoginPage import LoginPage
+from pages.demoblaze.AboutUsPage import AboutUsPage
+from pages.demoblaze.ContactFormPage import ContactFormPage
+from pages.demoblaze.ProductPage import ProductPage
+from pages.demoblaze.SignupPage import SignupPage
 
 class BaseClass:
 

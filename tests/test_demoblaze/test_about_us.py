@@ -1,6 +1,6 @@
-from pages.HomePage import HomePage
-from pages.LoginPage import LoginPage
-from pages.AboutUsPage import AboutUsPage
+from pages.demoblaze.HomePage import HomePage
+from pages.demoblaze.LoginPage import LoginPage
+from pages.demoblaze.AboutUsPage import AboutUsPage
 from selenium.webdriver import ActionChains
 import time
 

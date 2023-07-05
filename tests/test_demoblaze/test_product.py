@@ -1,6 +1,6 @@
-from pages.HomePage import HomePage
-from pages.LoginPage import LoginPage
-from pages.ProductPage import ProductPage
+from pages.demoblaze.HomePage import HomePage
+from pages.demoblaze.LoginPage import LoginPage
+from pages.demoblaze.ProductPage import ProductPage
 import time
 
 class BaseClass:

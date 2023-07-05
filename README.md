@@ -16,9 +16,9 @@
 6. ~Test categories~
 7. ~Test products list paginations~
 8. ~Test contact form~
-9. Test about us
-10. Test carousel
-11. Test main menu
+9. ~Test about us~
+10. ~Test carousel~
+11. ~Test main menu~
 
 </details>
 

@@ -1,5 +1,5 @@
-from pages.SignupPage import SignupPage
-from pages.LoginPage import LoginPage
+from pages.demoblaze.SignupPage import SignupPage
+from pages.demoblaze.LoginPage import LoginPage
 import random
 import string
 
