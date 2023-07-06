@@ -10,7 +10,6 @@ class SignupPage(Base):
     _PASSWORD_INPUT = (By.CSS_SELECTOR, "#sign-password")
     _SUBMIT_SIGNUP_BUTTON = (By.CSS_SELECTOR, "#signInModal .modal-footer .btn.btn-primary")
 
-
     def __init__(self, driver):
         super().__init__(driver)
 
