@@ -2,6 +2,7 @@ from pages.demoblaze.HomePage import HomePage
 from pages.demoblaze.ProductPage import ProductPage
 import time
 
+
 class BaseClass:
 
     driver = None
@@ -13,6 +14,7 @@ class BaseClass:
         cls.page = ProductPage(cls.driver)
         cls.home = HomePage(cls.driver)
         cls.page.open()
+
 
 class TestCategories(BaseClass):
 

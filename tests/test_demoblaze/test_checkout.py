@@ -4,6 +4,7 @@ from pages.demoblaze.ProductPage import ProductPage
 from pages.demoblaze.CheckoutPage import CheckoutPage
 import time
 
+
 class BaseClass:
 
     driver = None
@@ -23,7 +24,7 @@ class BaseClass:
         cls.check = CheckoutPage(cls.driver)
 
 
-class TestCheckout_without_products_incognito(BaseClass):
+class TestCheckoutWithoutProductsIncognito(BaseClass):
 
     def setup_method(self):
         # Home page open and clear cookies before new test
@@ -72,7 +73,7 @@ class TestCheckout_without_products_incognito(BaseClass):
         self.page.click(self.check._OK_BUTTON)
 
 
-class TestCheckout_with_products_incognito(BaseClass):
+class TestCheckoutWithProductsIncognito(BaseClass):
 
     def setup_method(self):
         # Home page open and clear cookies before new test
@@ -117,7 +118,7 @@ class TestCheckout_with_products_incognito(BaseClass):
         self.page.click(self.check._OK_BUTTON)
 
 
-class TestCheckout_without_products_user(BaseClass):
+class TestCheckoutWithoutProductsUser(BaseClass):
 
     def setup_method(self):
         # Home page open and clear cookies before new test
@@ -168,7 +169,7 @@ class TestCheckout_without_products_user(BaseClass):
         self.page.click(self.check._OK_BUTTON)
 
 
-class TestCheckout_with_products_user(BaseClass):
+class TestCheckoutWithProductsUser(BaseClass):
 
     def setup_method(self):
         # Home page open and clear cookies before new test

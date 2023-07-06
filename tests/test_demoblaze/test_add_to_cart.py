@@ -3,6 +3,7 @@ from pages.demoblaze.LoginPage import LoginPage
 from pages.demoblaze.ProductPage import ProductPage
 import time
 
+
 class BaseClass:
 
     driver = None
@@ -10,13 +11,13 @@ class BaseClass:
     login = None
     home = None
 
-
     @classmethod
     def setup_class(cls):
         cls.page = ProductPage(cls.driver)
         cls.login = LoginPage(cls.driver)
         cls.home = HomePage(cls.driver)
         cls.page.open()
+
 
 class TestProduct(BaseClass):
 
@@ -67,7 +68,7 @@ class TestProduct(BaseClass):
         self.page.delete_product()
 
 
-class TestProduct_user(BaseClass):
+class TestProductUser(BaseClass):
 
     product_added = 'Product added.'
 

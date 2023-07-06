@@ -5,6 +5,7 @@ from pages.demoblaze.ContactFormPage import ContactFormPage
 from pages.demoblaze.ProductPage import ProductPage
 from pages.demoblaze.SignupPage import SignupPage
 
+
 class BaseClass:
 
     driver = None
@@ -23,6 +24,7 @@ class BaseClass:
         cls.form = ContactFormPage(cls.driver)
         cls.about = AboutUsPage(cls.driver)
         cls.sign = SignupPage(cls.driver)
+
 
 class TestMainMenu(BaseClass):
 

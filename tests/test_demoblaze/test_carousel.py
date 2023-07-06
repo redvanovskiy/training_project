@@ -1,6 +1,7 @@
 from pages.demoblaze.CarouselPage import CarouselPage
 import time
 
+
 class BaseClass:
 
     driver = None
@@ -9,6 +10,7 @@ class BaseClass:
     @classmethod
     def setup_class(cls):
         cls.page = CarouselPage(cls.driver)
+
 
 class TestCarousel(BaseClass):
 

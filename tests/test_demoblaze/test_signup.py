@@ -10,12 +10,12 @@ class BaseClass:
     page = None
     login = None
 
-
     @classmethod
     def setup_class(cls):
         cls.page = SignupPage(cls.driver)
         cls.login = LoginPage(cls.driver)
         cls.page.open()
+
 
 class TestSignup(BaseClass):
 

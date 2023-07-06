@@ -8,7 +8,7 @@ class SignupPage(Base):
     _SIGNUP_BUTTON = (By.CSS_SELECTOR, "#signin2")
     _SIGNUP_INPUT = (By.CSS_SELECTOR, "#sign-username")
     _PASSWORD_INPUT = (By.CSS_SELECTOR, "#sign-password")
-    _SUBMIT_SIGNUP_BUTTON = (By.CSS_SELECTOR, "#signInModal > div > div > div.modal-footer > button.btn.btn-primary")
+    _SUBMIT_SIGNUP_BUTTON = (By.CSS_SELECTOR, "#signInModal .modal-footer .btn.btn-primary")
 
 
     def __init__(self, driver):

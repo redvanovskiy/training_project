@@ -3,14 +3,14 @@ from selenium.webdriver.common.by import By
 
 
 class CarouselPage(Base):
-    _FIRST_SLIDE = (By.XPATH, "/html/body/nav/div[2]/div/div/div[1]/img")
-    _SECOND_SLIDE = (By.XPATH, "/html/body/nav/div[2]/div/div/div[2]/img")
-    _THIRD_SLIDE = (By.XPATH, "/html/body/nav/div[2]/div/div/div[3]/img")
-    _FIRST_INDICATOR_ = (By.XPATH, '/html/body/nav/div[2]/div/ol/li[1]')
-    _SECOND_INDICATOR = (By.XPATH, '/html/body/nav/div[2]/div/ol/li[2]')
-    _THIRD_INDICATOR = (By.XPATH, '/html/body/nav/div[2]/div/ol/li[3]')
-    _PREVIOUS_BUTTON = (By.XPATH, "/html/body/nav/div[2]/div/a[1]/span[1]")
-    _NEXT_BUTTON = (By.XPATH, '/html/body/nav/div[2]/div/a[2]/span[1]')
+    _FIRST_SLIDE = (By.CSS_SELECTOR, "#carouselExampleIndicators :nth-child(1) > img")
+    _SECOND_SLIDE = (By.CSS_SELECTOR, "#carouselExampleIndicators :nth-child(2) > img")
+    _THIRD_SLIDE = (By.CSS_SELECTOR, "#carouselExampleIndicators :nth-child(3) > img")
+    _FIRST_INDICATOR_ = (By.CSS_SELECTOR, '#carouselExampleIndicators [data-slide-to="0"]')
+    _SECOND_INDICATOR = (By.CSS_SELECTOR, '#carouselExampleIndicators [data-slide-to="1"]')
+    _THIRD_INDICATOR = (By.CSS_SELECTOR, '#carouselExampleIndicators [data-slide-to="2"]')
+    _PREVIOUS_BUTTON = (By.CSS_SELECTOR, "#carouselExampleIndicators .carousel-control-prev-icon")
+    _NEXT_BUTTON = (By.CSS_SELECTOR, '#carouselExampleIndicators .carousel-control-next-icon')
 
     def __init__(self, driver):
         super().__init__(driver)

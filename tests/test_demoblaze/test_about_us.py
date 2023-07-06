@@ -4,6 +4,7 @@ from pages.demoblaze.AboutUsPage import AboutUsPage
 from selenium.webdriver import ActionChains
 import time
 
+
 class BaseClass:
 
     driver = None
@@ -74,13 +75,13 @@ class TestAboutUs(BaseClass):
     def test_video_can_be_picture_in_picture_mode(self):
         self.page.click(self.page._START_PLAY_BUTTON)
         self.page.click(self.page._PICTURE_IN_PICTURE_BUTTON)
-        self.page.visible(self.page._EXIT_PICTURE_IN_PICTURE_BUTTON)
+        self.page.visible(self.page._EXIT_PICTURE_IN_PICTURE)
 
     def test_video_can_be_exit_picture_in_picture_mode(self):
         self.page.click(self.page._START_PLAY_BUTTON)
         self.page.click(self.page._PICTURE_IN_PICTURE_BUTTON)
-        self.page.visible(self.page._EXIT_PICTURE_IN_PICTURE_BUTTON)
-        self.page.click(self.page._EXIT_PICTURE_IN_PICTURE_BUTTON)
+        self.page.visible(self.page._EXIT_PICTURE_IN_PICTURE)
+        self.page.click(self.page._EXIT_PICTURE_IN_PICTURE)
         self.page.visible(self.page._PICTURE_IN_PICTURE_BUTTON)
 
     def test_volume_can_be_mute(self):

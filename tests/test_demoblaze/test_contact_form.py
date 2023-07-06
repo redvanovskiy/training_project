@@ -1,7 +1,7 @@
 from pages.demoblaze.HomePage import HomePage
 from pages.demoblaze.LoginPage import LoginPage
 from pages.demoblaze.ContactFormPage import ContactFormPage
-# from selenium.webdriver import ActionChains
+
 
 class BaseClass:
 
@@ -9,17 +9,15 @@ class BaseClass:
     login = None
     home = None
     form = None
-    # action = None
     success_mes = 'Thanks for the message!!'
     title = 'New message'
-
 
     @classmethod
     def setup_class(cls):
         cls.login = LoginPage(cls.driver)
         cls.home = HomePage(cls.driver)
         cls.form = ContactFormPage(cls.driver)
-        # cls.action = ActionChains(cls.driver)
+
 
 class TestContactForm(BaseClass):
 
@@ -28,10 +26,6 @@ class TestContactForm(BaseClass):
         self.form.refresh()
         self.form.open()
         self.form.click(self.home._CONTACT)
-
-    # def test_message_field(self):
-    #     self.action.click_and_hold(self.form._MESSAGE_FIELD, ).move_by_offset(0, 250)
-    #     time.sleep(2)                # Не понимаю как можно растянуть поле
 
     # def test_assert_title(self):
     #     self.form.assert_title(self.title)  # Почему-то не работает
@@ -51,7 +45,7 @@ class TestContactForm(BaseClass):
 
     def test_send_form_with_filling_all_fields(self):
         self.form.send_keys(self.form._CONTACT_EMAIL_INPUT, "StarWars@gmail.com")
-        self.form.send_keys(self.form._CONTACT_NAME_INPUT, "Obi-Van Kenobi")
+        self.form.send_keys(self.form._CONTACT_NAME_INPUT, "Obi-Wan Kenobi")
         self.form.send_keys(self.form._MESSAGE_FIELD, "Hello There!")
         self.form.click(self.form._SEND_MESSAGE_BUTTON)
         self.login.assert_text_in_alert(self.success_mes)

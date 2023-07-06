@@ -3,6 +3,7 @@ from pages.demoblaze.LoginPage import LoginPage
 from pages.demoblaze.ProductPage import ProductPage
 import time
 
+
 class BaseClass:
 
     driver = None
@@ -13,13 +14,13 @@ class BaseClass:
     product_price = '$360 *includes tax'
     product_description = 'The Samsung Galaxy S6 is powered by 1.5GHz octa-core Samsung Exynos 7420 processor and it comes with 3GB of RAM. The phone packs 32GB of internal storage cannot be expanded.'
 
-
     @classmethod
     def setup_class(cls):
         cls.page = ProductPage(cls.driver)
         cls.login = LoginPage(cls.driver)
         cls.home = HomePage(cls.driver)
         cls.page.open()
+
 
 class TestProduct(BaseClass):
 
@@ -40,7 +41,8 @@ class TestProduct(BaseClass):
         self.page.assert_product_description(self.product_description)
         self.page.visible(self.page._ADD_TO_CART_BUTTON)
 
-class TestProduct_user(BaseClass):
+
+class TestProductUser(BaseClass):
 
     def setup_method(self):
         # Home page open before new test
