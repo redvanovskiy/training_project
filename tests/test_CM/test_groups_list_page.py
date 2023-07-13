@@ -19,15 +19,19 @@ class TestGroupListPage(BaseClass):
     def setup_method(self):
         # Refresh page before new test
         self.page.refresh()
-        self.page._login('s.borysenko', 's.borysenko')
+
 
     def test_cyrillic_search(self):
+        self.page._login('s.borysenko', 's.borysenko')
+        self.page.open_search_field()
         self.page.set_search_key('тест')
 
     def test_latin_search(self):
+        self.page.open_search_field()
         self.page.set_search_key('test')
 
     def test_search_by_number(self):
+        self.page.open_search_field()
         self.page.set_search_key('7')
 
     def test_filter_by_ucce(self):

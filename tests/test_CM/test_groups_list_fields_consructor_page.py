@@ -18,12 +18,13 @@ class BaseClass:
 
 class TestGroupsListFieldsConstructorPage(BaseClass):
 
-    def setup_method(self):
-        # Refresh page before new test
-        self.page.refresh()
-        self.page.login('s.borysenko', 's.borysenko')
+    # def setup_method(self):
+    #     # Refresh page before new test
+    #     self.page.refresh()
+    #     self.page.open_fields_constructor()
 
     def test_open_fields_constructor(self):
+        self.page.login('s.borysenko', 's.borysenko')
         self.page.open_fields_constructor()
 
     def test_create_new_group_without_campaigns(self):
@@ -66,7 +67,7 @@ class TestGroupsListFieldsConstructorPage(BaseClass):
         random_comment = self.page.set_random_comment(1)
         self.page.click_add_button()
         self.page.set_group_name(random_group_name)
-        self.page.set_group_name(random_comment)
+        self.page.set_comment(random_comment)
         self.page.click_save_button()
 
     def test_create_new_group_with_255_characters_in_comment(self):
@@ -74,14 +75,14 @@ class TestGroupsListFieldsConstructorPage(BaseClass):
         random_comment = self.page.set_random_comment(255)
         self.page.click_add_button()
         self.page.set_group_name(random_group_name)
-        self.page.set_group_name(random_comment)
+        self.page.set_comment(random_comment)
         self.page.click_save_button()
 
     def test_create_new_group_with_255_cyrillic_characters_in_comment(self):
         random_group_name = self.page.set_random_group_name(7)
         self.page.click_add_button()
         self.page.set_group_name(random_group_name)
-        self.page.set_group_name(self.cyrillic_lorem_ipsum255)
+        self.page.set_comment(self.cyrillic_lorem_ipsum255)
         self.page.click_save_button()
 
     def test_create_new_group_with_256_characters_in_comment(self):
@@ -89,7 +90,7 @@ class TestGroupsListFieldsConstructorPage(BaseClass):
         random_comment = self.page.set_random_comment(256)
         self.page.click_add_button()
         self.page.set_group_name(random_group_name)
-        self.page.set_group_name(random_comment)
+        self.page.set_comment(random_comment)
         self.page.click_save_button()
 
     def test_change_name_last_added_group(self):
