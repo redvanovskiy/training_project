@@ -1,3 +1,5 @@
+import time
+
 from pages.pages__demoblaze.HomePage import HomePage
 
 
@@ -27,6 +29,8 @@ class TestPagination(BaseClass):
     def test_pagination_changes(self):
         self.page.visible(self.page._PAGINATION_NEXT)
         self.page.click(self.page._PAGINATION_NEXT)
+        time.sleep(2)
         self.page.visible(self.page._PRODUCT2)
         self.page.click(self.page._PAGINATION_PREV)
+        time.sleep(2)
         self.page.visible(self.page._PRODUCT1)
