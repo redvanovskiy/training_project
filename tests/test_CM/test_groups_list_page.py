@@ -36,6 +36,7 @@ class TestGroupListPage(BaseClass):
 
     def test_filter_by_ucce(self):
         self.page.open_filter()
+        time.sleep(5)
         self.page.select_ucce_checkbox()
         self.page.click_ok_button()
 

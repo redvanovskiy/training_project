@@ -8,6 +8,7 @@ class RequestsListPage(Base):
     _PASSWORD_INPUT = (By.CSS_SELECTOR, "#credential")
     _SIGN_IN_BUTTON = (By.CSS_SELECTOR, ".ant-row-middle .ant-btn-primary")
 
+    _FIELDS_CONSTRUCTOR_BUTTON = (By.CSS_SELECTOR, ".ant-btn.const-btn")
     _REQUESTS_LIST_TAB = (By.CSS_SELECTOR, "#rc-tabs-4-tab-REQUESTS")
     _REFRESH_BUTTON = (By.CSS_SELECTOR, ".header button:nth-child(1)")
     _FILTER = (By.CSS_SELECTOR, ".header .filter-btn")
