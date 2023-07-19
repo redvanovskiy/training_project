@@ -34,7 +34,7 @@ class TestCRUDEmployee(BaseClass):
 
     def test_success_search_employee(self):
         self.page.click(self.page._PIM_BUTTON)
-        self.pim.send_keys(self.pim._EMPLOYEE_NAME_SEARCH_FIELD, self.pim.cred)
+        self.pim.send_keys(self.pim._EMPLOYEE_NAME_SEARCH_FIELD, "Raut")
         self.pim.click(self.pim._SEARCH_BUTTON)
         self.pim.assert_text(self.pim._TITLE_RECORD_FOUND, self.found_text)
 

@@ -2,7 +2,6 @@ from base.base import Base
 from selenium.webdriver.common.by import By
 import random
 import string
-import time
 
 
 class AdminPage(Base):
@@ -21,7 +20,7 @@ class AdminPage(Base):
     _SAVE_BUTTON = (By.CSS_SELECTOR, "[type='submit'], .orangehrm-left-space")
     _LOADER = (By.CSS_SELECTOR, "div.oxd-form-loader")
     _username = ''.join(random.choice(string.hexdigits) for i in range(8))
-    _password = ''.join(random.choice(string.hexdigits + string.punctuation) for i in range(10))
+    _password = ''.join(random.choice(string.hexdigits + "!@") for i in range(10))
 
     def __init__(self, driver):
         super().__init__(driver)
