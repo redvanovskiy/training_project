@@ -96,13 +96,6 @@ class TestAboutUs(BaseClass):
         self.page.click(self.page._VOLUME_MUTE_BUTTON)
         self.page.visible(self.page._VOLUME_BUTTON)
 
-    # def test_change_volume(self):
-    #     self.page.click(self.page._START_PLAY_BUTTON)
-    #     self.page.hover_to(self.page._VOLUME_BUTTON)
-    #     self.page.hover_to(self.page._VOLUME_CONTROL)
-    #     # self.action.click_and_hold(self.page._VOLUME_CONTROL).move_by_offset(-2, 0).release()
-    #     self.action.drag_and_drop_by_offset(self.page._VOLUME_CONTROL, -2, 0)
-
     def test_progres_holder_can_be_change(self):
         self.page.click(self.page._START_PLAY_BUTTON)
         self.page.hover_to(self.page._PROGRESS_HOLDER)
