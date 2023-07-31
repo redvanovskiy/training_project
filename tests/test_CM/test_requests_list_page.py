@@ -86,3 +86,166 @@ class TestGroupListPage(BaseClass):
         self.page.select_cd_callstatus_column()
         self.page.select_requesttext_column()
         self.page.click_apply_button()
+
+    def test_open_filter(self):
+        self.page.open_filter()
+
+    def test_filter_by_batches(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_batches()
+        self.page.open_batches_name_selector()
+        self.page.select_first_batch()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientid(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientid()
+        self.page.open_condition_selector()
+        self.page.select_match_exactly()
+        self.page.set_value('5')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientid_less_0(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientid()
+        self.page.open_condition_selector()
+        self.page.select_not_match()
+        self.page.set_value('-1')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientid_letters(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientid()
+        self.page.open_condition_selector()
+        self.page.select_contain()
+        self.page.set_value('s')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientid_cirilic(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientid()
+        self.page.open_condition_selector()
+        self.page.select_start_with()
+        self.page.set_value('Ї')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientname(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientmame()
+        self.page.open_condition_selector()
+        self.page.select_not_match()
+        self.page.set_value('Magda')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientname_less_0(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientid()
+        self.page.open_condition_selector()
+        self.page.select_not_match()
+        self.page.set_value('-1')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientname_more_0(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientid()
+        self.page.open_condition_selector()
+        self.page.select_contain()
+        self.page.set_value('7')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientname_cirilic(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientid()
+        self.page.open_condition_selector()
+        self.page.select_start_with()
+        self.page.set_value('Ї')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientname_symbols(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientid()
+        self.page.open_condition_selector()
+        self.page.select_start_with()
+        self.page.set_value('@')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_phone(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_phone()
+        self.page.open_condition_selector()
+        self.page.select_contain()
+        self.page.set_value('9')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_requestdatetime_match_exactly(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_requestdatetime()
+        self.page.open_condition_selector()
+        self.page.select_match_exactly()
+        self.page.click_now_button()
+        self.page.use_only_last_request()
+        self.page.click_apply_button()
+
+    def test_filter_by_requestdatetime_not_match(self):
+        self.page.open_filter()
+        self.page.open_condition_selector()
+        self.page.select_not_match()
+        self.page.click_apply_button()
+
+    def test_filter_by_requestdatetime_less_than(self):
+        self.page.open_filter()
+        self.page.open_condition_selector()
+        self.page.select_less_than()
+        self.page.click_apply_button()
+
+    def test_filter_by_requestdatetime_less_than_or_equal(self):
+        self.page.open_filter()
+        self.page.open_condition_selector()
+        self.page.select_less_than_or_equal()
+        self.page.click_apply_button()
+
+    def test_filter_by_requestdatetime_greater_than(self):
+        self.page.open_filter()
+        self.page.open_condition_selector()
+        self.page.select_greater_than()
+        self.page.click_apply_button()
+
+    def test_filter_by_requestdatetime_greater_than_or_equal(self):
+        self.page.open_filter()
+        self.page.open_condition_selector()
+        self.page.select_greater_than_or_equal()
+        self.page.click_apply_button()

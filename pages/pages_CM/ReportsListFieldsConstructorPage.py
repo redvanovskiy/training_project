@@ -22,6 +22,12 @@ class ReportsListFieldsConstructorPage(Base):
     _CANCEL_BUTTON = (By.CSS_SELECTOR, ".footer-report-types .ant-btn:nth-child(1)")
     _CREATE_BUTTON = (By.CSS_SELECTOR, ".footer-report-types .ant-btn:nth-child(2)")
     _TEMPLATE_NAME = (By.CSS_SELECTOR, "main .ant-row .ant-input:nth-child(2)")
+    _FIELDS_SELECTOR = (By.CSS_SELECTOR, "#rc_select_11")
+    _SELECT_BATCHES = (By.LINK_TEXT, "Batches")
+
+
+
+    _SAVE_BUTTON = (By.CSS_SELECTOR, "footer .ant-btn.ant-btn-primary")
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -71,4 +77,11 @@ class ReportsListFieldsConstructorPage(Base):
         letters = string.ascii_letters
         return ''.join(random.choice(letters) for _ in range(length))
 
+    def open_fields_selector(self):
+        self.click(self._FIELDS_SELECTOR)
 
+    def select_batches(self):
+        self.click(self._SELECT_BATCHES)
+
+    def save_new_template(self):
+        self.click(self._SAVE_BUTTON)

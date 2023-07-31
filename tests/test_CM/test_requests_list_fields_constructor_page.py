@@ -165,6 +165,21 @@ class TestGroupsListFieldsConstructorPage(BaseClass):
         self.page.select_string_type()
         self.page.set_length('33')
 
+    def test_set_length_256(self):
+        self.page.open_data_type_selector()
+        self.page.select_string_type()
+        self.page.set_length('256')
+
+    def test_set_length_0(self):
+        self.page.open_data_type_selector()
+        self.page.select_string_type()
+        self.page.set_length('0')
+
+    def test_set_length_less_0(self):
+        self.page.open_data_type_selector()
+        self.page.select_string_type()
+        self.page.set_length('-1')
+
     def test_set_default_value(self):
         self.page.open_data_type_selector()
         self.page.select_string_type()

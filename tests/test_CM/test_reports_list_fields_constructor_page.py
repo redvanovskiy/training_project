@@ -50,3 +50,5 @@ class TestGroupsListFieldsConstructorPage(BaseClass):
         random_template_name = self.page.set_random_template_name(7)
         self.page.set_template_name(random_template_name)
 
+    def test_save_new_template(self):
+        self.page.save_new_template()

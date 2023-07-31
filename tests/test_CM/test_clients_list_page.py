@@ -61,3 +61,48 @@ class TestGroupListPage(BaseClass):
         self.page.select_clientid_column()
         self.page.select_phone_column()
         self.page.click_apply_button()
+
+    def test_open_filter(self):
+        self.page.open_filter()
+
+    def test_filter_by_batches(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_batches()
+        self.page.open_batches_name_selector()
+        self.page.select_first_batch()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientid(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientid()
+        self.page.open_condition_selector()
+        self.page.select_match_exactly()
+        self.page.set_value('5')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_clientname(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_clientmame()
+        self.page.open_condition_selector()
+        self.page.select_not_match()
+        self.page.set_value('Magda')
+        self.page.confirm_value()
+        self.page.click_apply_button()
+
+    def test_filter_by_phone(self):
+        self.page.open_filter()
+        self.page.click_add_filter_button()
+        self.page.open_field_selector()
+        self.page.select_phone()
+        self.page.open_condition_selector()
+        self.page.select_contain()
+        self.page.set_value('9')
+        self.page.confirm_value()
+        self.page.click_apply_button()
